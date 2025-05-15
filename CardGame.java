@@ -73,6 +73,25 @@ public class CardGame {
         System.out.println("Your starting total: " + playerTotal);
         System.out.println("Computer's starting total: " + computerTotal);
 
+        // Add player hit/stay input loop
+        Scanner scnr = new Scanner(System.in);
+        int playerIndex = 2;
+
+        while (playerTotal < 21 && playerIndex < 5) {
+            System.out.print("Type 'hit' to draw another card, or any other key to stay: ");
+            String input = scnr.nextLine();
+
+            if (input.equalsIgnoreCase("hit")) {
+                playerHand[playerIndex] = cardList.getFirst();
+                System.out.println("You drew: " + playerHand[playerIndex]);
+                playerTotal += playerHand[playerIndex].getCardValue();
+                playerIndex++;
+                System.out.println("New total: " + playerTotal);
+            } else {
+                break;
+            }
+        }
+        
 	}//end main
 
 }//end class
