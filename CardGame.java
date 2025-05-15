@@ -62,6 +62,17 @@ public class CardGame {
 		System.out.println("the deck");
 		cardList.displayList();
 
+        // Setup computer hand and player totals
+        Card[] computerHand = new Card[5];
+        computerHand[0] = cardList.getFirst();
+        computerHand[1] = cardList.getFirst();
+
+        int playerTotal = playerHand[0].getCardValue() + playerHand[1].getCardValue();
+        int computerTotal = computerHand[0].getCardValue() + computerHand[1].getCardValue();
+
+        System.out.println("Your starting total: " + playerTotal);
+        System.out.println("Computer's starting total: " + computerTotal);
+
 	}//end main
 
 }//end class
